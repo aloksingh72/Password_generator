@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ---------top level container------- -->
+    <div class="container">
+        <!-- -------heading---------- -->
+        <h1>Password Generator</h1>     
+        <!-- -----------result display container-------- -->
+        <div class="display-container">
+            <input readonly placeholder="Password" class="display" data-passwordDisplay>
+            <!-- //ye data-passwordDisplay ek custom attribute hai 
+                 hum chahe toh id, class,tag se bhi js me element ko fetch kar sakhte the... -->
+            <button class="copyBtn" data-copy>
+                <span class="tooltip" data-copyMsg></span>
+                <img src="copy.svg" alt="copy" width="23" height="23">
+            </button>
+
+        </div>
+        <!-- -----------input container------- -->
+        <div class="input-container">
+            <!-- ---------password length section-------- -->
+            <div class="length-container">
+                <p>Password Length</p>
+                <p data-lengthNumber>0</p>
+            </div>
+            <!-- ----------slider--------- -->
+            <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider>
+            <!-- ---------four checkboxes---------- -->
+            <div class="check">
+                <input type="checkbox" id="uppercase">
+                <label for="uppercase">Includes uppercase letters</label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="lowercase">
+                <label for="uppercase">Includes lowercase letters</label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="numbers">
+                <label for="uppercase">Includes numbers </label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="symbols">
+                <label for="uppercase">Includes symbols</label>
+            </div>
+            <!-- -----------strength section----------- -->
+            <div class="strength-container">
+                <p>Strength</p>
+                <div class="indicator" data-strengthIndicator></div>
+
+
+            </div>
+            <!-- --------------generate password button--------- -->
+            <button class="generateButton">
+                Generate Password
+            </button>
+
+        </div>
+
+    </div>
+<script src="script.js"></script>
+</body>
+
+</html>
